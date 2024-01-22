@@ -1,0 +1,636 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FamilyPlanning_API</name>
+    </assembly>
+    <members>
+        <member name="M:FamilyPlanning_API.Controllers.AuthenticationController.Register(FamilyPlanning_API.Controllers.AuthenticationController.RegisterViewModel)">
+            <summary>
+            Регистрация нового пользователя.
+            </summary>
+            <remarks>
+            Производит регистрацию нового пользователя в системе.
+            </remarks>
+            <param name="model">Модель данных для регистрации пользователя, включая уникальное имя пользователя, пароль и дату рождения.</param>
+            <returns>Возвращает успешное сообщение о завершении регистрации или сообщение об ошибке, если указанное имя пользователя уже занято.</returns>
+        </member>
+        <member name="M:FamilyPlanning_API.Controllers.AuthenticationController.Login(FamilyPlanning_API.Controllers.AuthenticationController.LoginViewModel)">
+            <summary>
+            Вход пользователя в систему.
+            </summary>
+            <remarks>
+            Производит аутентификацию пользователя на основе предоставленных учетных данных.
+            </remarks>
+            <param name="model">Модель данных для входа пользователя, включая имя пользователя и пароль.</param>
+            <returns>Возвращает токен JWT и идентификатор пользователя в случае успешной аутентификации, иначе возвращает сообщение об ошибке.</returns>
+        </member>
+        <member name="M:FamilyPlanning_API.Controllers.AuthenticationController.UpdateProfile(FamilyPlanning_API.Controllers.AuthenticationController.UpdateProfileViewModel)">
+            <summary>
+            Обновление профиля пользователя.
+            </summary>
+            <remarks>
+            Производит обновление персональных данных пользователя.
+            </remarks>
+            <param name="model">Модель данных для обновления профиля пользователя, включая имя и фамилию.</param>
+            <returns>Возвращает успешное сообщение о завершении обновления профиля или сообщение об ошибке в случае отсутствия пользователя с указанным идентификатором.</returns>
+        </member>
+        <member name="T:BasicEventController">
+            <summary>
+            Контроллер для работы с базовыми событиями.
+            </summary>
+        </member>
+        <member name="M:BasicEventController.#ctor(FamilyPlanning_API.Models.family_planningContext)">
+            <summary>
+            Конструктор контроллера базовых событий.
+            </summary>
+            <param name="context">Контекст базы данных.</param>
+        </member>
+        <member name="M:BasicEventController.GetAll">
+            <summary>
+            Получение всех базовых событий.
+            </summary>
+            <returns>Возвращает список всех базовых событий.</returns>
+        </member>
+        <member name="M:BasicEventController.GetById(System.Int32)">
+            <summary>
+            Получение базового события по его идентификатору.
+            </summary>
+            <param name="id">Идентификатор базового события.</param>
+            <returns>Возвращает базовое событие с указанным идентификатором или сообщение об ошибке, если событие не найдено.</returns>
+        </member>
+        <member name="M:BasicEventController.Add(FamilyPlanning_API.Contracts.BasicEvent.CreateBasicEventRequest)">
+            <summary>
+            Добавление нового базового события.
+            </summary>
+            <param name="basicEvent">Модель данных базового события для добавления.</param>
+            <returns>Возвращает созданное базовое событие и его маршрут или сообщение об ошибке при неверных входных данных.</returns>
+        </member>
+        <member name="M:BasicEventController.Update(System.Int32,FamilyPlanning_API.Models.BasicEvent)">
+            <summary>
+            Обновление базового события по его идентификатору.
+            </summary>
+            <param name="id">Идентификатор базового события для обновления.</param>
+            <param name="basicEvent">Модель данных для обновления базового события.</param>
+            <returns>Возвращает успешное сообщение о выполнении обновления или сообщение об ошибке при неверных входных данных или отсутствии события.</returns>
+        </member>
+        <member name="M:BasicEventController.Delete(System.Int32)">
+            <summary>
+            Удаление базового события по его идентификатору.
+            </summary>
+            <param name="id">Идентификатор базового события для удаления.</param>
+            <returns>Возвращает успешное сообщение о выполнении удаления или сообщение об ошибке при отсутствии события с указанным идентификатором.</returns>
+        </member>
+        <member name="T:CalendarController">
+            <summary>
+            Контроллер для работы с календарями.
+            </summary>
+        </member>
+        <member name="M:CalendarController.#ctor(FamilyPlanning_API.Models.family_planningContext)">
+            <summary>
+            Конструктор контроллера календарей.
+            </summary>
+            <param name="context">Контекст базы данных.</param>
+        </member>
+        <member name="M:CalendarController.GetAll">
+            <summary>
+            Получение всех календарей.
+            </summary>
+            <returns>Возвращает список всех календарей.</returns>
+        </member>
+        <member name="M:CalendarController.GetById(System.Int32)">
+            <summary>
+            Получение календаря по его идентификатору.
+            </summary>
+            <param name="id">Идентификатор календаря.</param>
+            <returns>Возвращает календарь с указанным идентификатором или сообщение об ошибке, если календарь не найден.</returns>
+        </member>
+        <member name="M:CalendarController.Add(FamilyPlanning_API.Models.Calendar)">
+            <summary>
+            Добавление нового календаря.
+            </summary>
+            <param name="calendar">Модель данных календаря для добавления.</param>
+            <returns>Возвращает созданный календарь и его маршрут или сообщение об ошибке при неверных входных данных.</returns>
+        </member>
+        <member name="M:CalendarController.Update(System.Int32,FamilyPlanning_API.Models.Calendar)">
+            <summary>
+            Обновление календаря по его идентификатору.
+            </summary>
+            <param name="id">Идентификатор календаря для обновления.</param>
+            <param name="calendar">Модель данных для обновления календаря.</param>
+            <returns>Возвращает успешное сообщение о выполнении обновления или сообщение об ошибке при неверных входных данных или отсутствии календаря.</returns>
+        </member>
+        <member name="M:CalendarController.Delete(System.Int32)">
+            <summary>
+            Удаление календаря по его идентификатору.
+            </summary>
+            <param name="id">Идентификатор календаря для удаления.</param>
+            <returns>Возвращает успешное сообщение о выполнении удаления или сообщение об ошибке при отсутствии календаря с указанным идентификатором.</returns>
+        </member>
+        <member name="T:CalendarEventController">
+            <summary>
+            Контроллер для работы с календарными событиями.
+            </summary>
+        </member>
+        <member name="M:CalendarEventController.#ctor(FamilyPlanning_API.Models.family_planningContext)">
+            <summary>
+            Конструктор контроллера календарных событий.
+            </summary>
+            <param name="context">Контекст базы данных.</param>
+        </member>
+        <member name="M:CalendarEventController.GetAll">
+            <summary>
+            Получение всех календарных событий.
+            </summary>
+            <returns>Возвращает список всех календарных событий.</returns>
+        </member>
+        <member name="M:CalendarEventController.GetById(System.Int32)">
+            <summary>
+            Получение календарного события по его идентификатору.
+            </summary>
+            <param name="id">Идентификатор календарного события.</param>
+            <returns>Возвращает календарное событие с указанным идентификатором или сообщение об ошибке, если событие не найдено.</returns>
+        </member>
+        <member name="M:CalendarEventController.Add(FamilyPlanning_API.Models.CalendarEvent)">
+            <summary>
+            Добавление нового календарного события.
+            </summary>
+            <param name="calendarEvent">Модель данных календарного события для добавления.</param>
+            <returns>Возвращает созданное календарное событие и его маршрут или сообщение об ошибке при неверных входных данных.</returns>
+        </member>
+        <member name="M:CalendarEventController.Update(System.Int32,FamilyPlanning_API.Models.CalendarEvent)">
+            <summary>
+            Обновление календарного события по его идентификатору.
+            </summary>
+            <param name="id">Идентификатор календарного события для обновления.</param>
+            <param name="calendarEvent">Модель данных для обновления календарного события.</param>
+            <returns>Возвращает успешное сообщение о выполнении обновления или сообщение об ошибке при неверных входных данных или отсутствии события.</returns>
+        </member>
+        <member name="M:CalendarEventController.Delete(System.Int32)">
+            <summary>
+            Удаление календарного события по его идентификатору.
+            </summary>
+            <param name="id">Идентификатор календарного события для удаления.</param>
+            <returns>Возвращает успешное сообщение о выполнении удаления или сообщение об ошибке при отсутствии события с указанным идентификатором.</returns>
+        </member>
+        <member name="T:FamilyController">
+            <summary>
+            Контроллер для работы с семьями.
+            </summary>
+        </member>
+        <member name="M:FamilyController.#ctor(FamilyPlanning_API.Models.family_planningContext)">
+            <summary>
+            Конструктор контроллера семей.
+            </summary>
+            <param name="context">Контекст базы данных.</param>
+        </member>
+        <member name="M:FamilyController.GetAll">
+            <summary>
+            Получение всех семей.
+            </summary>
+            <returns>Возвращает список всех семей.</returns>
+        </member>
+        <member name="M:FamilyController.GetById(System.Int32)">
+            <summary>
+            Получение семьи по ее идентификатору.
+            </summary>
+            <param name="id">Идентификатор семьи.</param>
+            <returns>Возвращает семью с указанным идентификатором или сообщение об ошибке, если семья не найдена.</returns>
+        </member>
+        <member name="M:FamilyController.Add(FamilyPlanning_API.Models.Family)">
+            <summary>
+            Добавление новой семьи.
+            </summary>
+            <param name="family">Модель данных семьи для добавления.</param>
+            <returns>Возвращает созданную семью и ее маршрут или сообщение об ошибке при неверных входных данных.</returns>
+        </member>
+        <member name="M:FamilyController.Update(System.Int32,FamilyPlanning_API.Models.Family)">
+            <summary>
+            Обновление семьи по ее идентификатору.
+            </summary>
+            <param name="id">Идентификатор семьи для обновления.</param>
+            <param name="family">Модель данных для обновления семьи.</param>
+            <returns>Возвращает успешное сообщение о выполнении обновления или сообщение об ошибке при неверных входных данных или отсутствии семьи.</returns>
+        </member>
+        <member name="M:FamilyController.Delete(System.Int32)">
+            <summary>
+            Удаление семьи по ее идентификатору.
+            </summary>
+            <param name="id">Идентификатор семьи для удаления.</param>
+            <returns>Возвращает успешное сообщение о выполнении удаления или сообщение об ошибке при отсутствии семьи с указанным идентификатором.</returns>
+        </member>
+        <member name="T:FamilyEventController">
+            <summary>
+            Контроллер для работы с семейными событиями.
+            </summary>
+        </member>
+        <member name="M:FamilyEventController.#ctor(FamilyPlanning_API.Models.family_planningContext)">
+            <summary>
+            Конструктор контроллера семейных событий.
+            </summary>
+            <param name="context">Контекст базы данных.</param>
+        </member>
+        <member name="M:FamilyEventController.GetAll">
+            <summary>
+            Получение всех семейных событий.
+            </summary>
+            <returns>Возвращает список всех семейных событий.</returns>
+        </member>
+        <member name="M:FamilyEventController.GetById(System.Int32)">
+            <summary>
+            Получение семейного события по его идентификатору.
+            </summary>
+            <param name="id">Идентификатор семейного события.</param>
+            <returns>Возвращает семейное событие с указанным идентификатором или сообщение об ошибке, если событие не найдено.</returns>
+        </member>
+        <member name="M:FamilyEventController.Add(FamilyPlanning_API.Models.FamilyEvent)">
+            <summary>
+            Добавление нового семейного события.
+            </summary>
+            <param name="familyEvent">Модель данных семейного события для добавления.</param>
+            <returns>Возвращает созданное семейное событие и его маршрут или сообщение об ошибке при неверных входных данных.</returns>
+        </member>
+        <member name="M:FamilyEventController.Update(System.Int32,FamilyPlanning_API.Models.FamilyEvent)">
+            <summary>
+            Обновление семейного события по его идентификатору.
+            </summary>
+            <param name="id">Идентификатор семейного события для обновления.</param>
+            <param name="familyEvent">Модель данных для обновления семейного события.</param>
+            <returns>Возвращает успешное сообщение о выполнении обновления или сообщение об ошибке при неверных входных данных или отсутствии события.</returns>
+        </member>
+        <member name="M:FamilyEventController.Delete(System.Int32)">
+            <summary>
+            Удаление семейного события по его идентификатору.
+            </summary>
+            <param name="id">Идентификатор семейного события для удаления.</param>
+            <returns>Возвращает успешное сообщение о выполнении удаления или сообщение об ошибке при отсутствии события с указанным идентификатором.</returns>
+        </member>
+        <member name="T:FamilyListController">
+            <summary>
+            Контроллер для работы с списками семей.
+            </summary>
+        </member>
+        <member name="M:FamilyListController.#ctor(FamilyPlanning_API.Models.family_planningContext)">
+            <summary>
+            Конструктор контроллера списков семей.
+            </summary>
+            <param name="context">Контекст базы данных.</param>
+        </member>
+        <member name="M:FamilyListController.GetAll">
+            <summary>
+            Получение всех списков семей.
+            </summary>
+            <returns>Возвращает список всех списков семей.</returns>
+        </member>
+        <member name="M:FamilyListController.GetById(System.Int32)">
+            <summary>
+            Получение списка семей по его идентификатору.
+            </summary>
+            <param name="id">Идентификатор списка семей.</param>
+            <returns>Возвращает список семей с указанным идентификатором или сообщение об ошибке, если список не найден.</returns>
+        </member>
+        <member name="M:FamilyListController.Add(FamilyPlanning_API.Models.FamilyList)">
+            <summary>
+            Добавление нового списка семей.
+            </summary>
+            <param name="familyList">Модель данных списка семей для добавления.</param>
+            <returns>Возвращает созданный список семей и его маршрут или сообщение об ошибке при неверных входных данных.</returns>
+        </member>
+        <member name="M:FamilyListController.Update(System.Int32,FamilyPlanning_API.Models.FamilyList)">
+            <summary>
+            Обновление списка семей по его идентификатору.
+            </summary>
+            <param name="id">Идентификатор списка семей для обновления.</param>
+            <param name="familyList">Модель данных для обновления списка семей.</param>
+            <returns>Возвращает успешное сообщение о выполнении обновления или сообщение об ошибке при неверных входных данных или отсутствии списка.</returns>
+        </member>
+        <member name="M:FamilyListController.Delete(System.Int32)">
+            <summary>
+            Удаление списка семей по его идентификатору.
+            </summary>
+            <param name="id">Идентификатор списка семей для удаления.</param>
+            <returns>Возвращает успешное сообщение о выполнении удаления или сообщение об ошибке при отсутствии списка с указанным идентификатором.</returns>
+        </member>
+        <member name="T:FamilyMemberController">
+            <summary>
+            Контроллер для работы с членами семьи.
+            </summary>
+        </member>
+        <member name="M:FamilyMemberController.#ctor(FamilyPlanning_API.Models.family_planningContext)">
+            <summary>
+            Конструктор контроллера членов семьи.
+            </summary>
+            <param name="context">Контекст базы данных.</param>
+        </member>
+        <member name="M:FamilyMemberController.GetAll">
+            <summary>
+            Получение всех членов семьи.
+            </summary>
+            <returns>Возвращает список всех членов семьи.</returns>
+        </member>
+        <member name="M:FamilyMemberController.GetById(System.Int32)">
+            <summary>
+            Получение члена семьи по его идентификатору.
+            </summary>
+            <param name="id">Идентификатор члена семьи.</param>
+            <returns>Возвращает члена семьи с указанным идентификатором или сообщение об ошибке, если член не найден.</returns>
+        </member>
+        <member name="M:FamilyMemberController.Add(FamilyPlanning_API.Models.FamilyMember)">
+            <summary>
+            Добавление нового члена семьи.
+            </summary>
+            <param name="familyMember">Модель данных члена семьи для добавления.</param>
+            <returns>Возвращает созданного члена семьи и его маршрут или сообщение об ошибке при неверных входных данных.</returns>
+        </member>
+        <member name="M:FamilyMemberController.Update(System.Int32,FamilyPlanning_API.Models.FamilyMember)">
+            <summary>
+            Обновление члена семьи по его идентификатору.
+            </summary>
+            <param name="id">Идентификатор члена семьи для обновления.</param>
+            <param name="familyMember">Модель данных для обновления члена семьи.</param>
+            <returns>Возвращает успешное сообщение о выполнении обновления или сообщение об ошибке при неверных входных данных или отсутствии члена.</returns>
+        </member>
+        <member name="M:FamilyMemberController.Delete(System.Int32)">
+            <summary>
+            Удаление члена семьи по его идентификатору.
+            </summary>
+            <param name="id">Идентификатор члена семьи для удаления.</param>
+            <returns>Возвращает успешное сообщение о выполнении удаления или сообщение об ошибке при отсутствии члена с указанным идентификатором.</returns>
+        </member>
+        <member name="T:FamilyTaskController">
+            <summary>
+            Контроллер для работы с задачами семьи.
+            </summary>
+        </member>
+        <member name="M:FamilyTaskController.#ctor(FamilyPlanning_API.Models.family_planningContext)">
+            <summary>
+            Конструктор контроллера задач семьи.
+            </summary>
+            <param name="context">Контекст базы данных.</param>
+        </member>
+        <member name="M:FamilyTaskController.GetAll">
+            <summary>
+            Получение всех задач семьи.
+            </summary>
+            <returns>Возвращает список всех задач семьи.</returns>
+        </member>
+        <member name="M:FamilyTaskController.GetById(System.Int32)">
+            <summary>
+            Получение задачи семьи по её идентификатору.
+            </summary>
+            <param name="id">Идентификатор задачи семьи.</param>
+            <returns>Возвращает задачу семьи с указанным идентификатором или сообщение об ошибке, если задача не найдена.</returns>
+        </member>
+        <member name="M:FamilyTaskController.Add(FamilyPlanning_API.Models.FamilyTask)">
+            <summary>
+            Добавление новой задачи семьи.
+            </summary>
+            <param name="familyTask">Модель данных задачи семьи для добавления.</param>
+            <returns>Возвращает созданную задачу семьи и её маршрут или сообщение об ошибке при неверных входных данных.</returns>
+        </member>
+        <member name="M:FamilyTaskController.Update(System.Int32,FamilyPlanning_API.Models.FamilyTask)">
+            <summary>
+            Обновление задачи семьи по её идентификатору.
+            </summary>
+            <param name="id">Идентификатор задачи семьи для обновления.</param>
+            <param name="familyTask">Модель данных для обновления задачи семьи.</param>
+            <returns>Возвращает успешное сообщение о выполнении обновления или сообщение об ошибке при неверных входных данных или отсутствии задачи.</returns>
+        </member>
+        <member name="M:FamilyTaskController.Delete(System.Int32)">
+            <summary>
+            Удаление задачи семьи по её идентификатору.
+            </summary>
+            <param name="id">Идентификатор задачи семьи для удаления.</param>
+            <returns>Возвращает успешное сообщение о выполнении удаления или сообщение об ошибке при отсутствии задачи с указанным идентификатором.</returns>
+        </member>
+        <member name="T:ListItemController">
+            <summary>
+            Контроллер для работы с элементами списка.
+            </summary>
+        </member>
+        <member name="M:ListItemController.#ctor(FamilyPlanning_API.Models.family_planningContext)">
+            <summary>
+            Конструктор контроллера элементов списка.
+            </summary>
+            <param name="context">Контекст базы данных.</param>
+        </member>
+        <member name="M:ListItemController.GetAll">
+            <summary>
+            Получение всех элементов списка.
+            </summary>
+            <returns>Возвращает список всех элементов списка.</returns>
+        </member>
+        <member name="M:ListItemController.GetById(System.Int32)">
+            <summary>
+            Получение элемента списка по его идентификатору.
+            </summary>
+            <param name="id">Идентификатор элемента списка.</param>
+            <returns>Возвращает элемент списка с указанным идентификатором или сообщение об ошибке, если элемент не найден.</returns>
+        </member>
+        <member name="M:ListItemController.Add(FamilyPlanning_API.Models.ListItem)">
+            <summary>
+            Добавление нового элемента списка.
+            </summary>
+            <param name="listItem">Модель данных элемента списка для добавления.</param>
+            <returns>Возвращает созданный элемент списка и его маршрут или сообщение об ошибке при неверных входных данных.</returns>
+        </member>
+        <member name="M:ListItemController.Update(System.Int32,FamilyPlanning_API.Models.ListItem)">
+            <summary>
+            Обновление элемента списка по его идентификатору.
+            </summary>
+            <param name="id">Идентификатор элемента списка для обновления.</param>
+            <param name="listItem">Модель данных для обновления элемента списка.</param>
+            <returns>Возвращает успешное сообщение о выполнении обновления или сообщение об ошибке при неверных входных данных или отсутствии элемента списка.</returns>
+        </member>
+        <member name="M:ListItemController.Delete(System.Int32)">
+            <summary>
+            Удаление элемента списка по его идентификатору.
+            </summary>
+            <param name="id">Идентификатор элемента списка для удаления.</param>
+            <returns>Возвращает успешное сообщение о выполнении удаления или сообщение об ошибке при отсутствии элемента списка с указанным идентификатором.</returns>
+        </member>
+        <member name="T:RolesController">
+            <summary>
+            Контроллер для работы с ролями пользователей.
+            </summary>
+        </member>
+        <member name="M:RolesController.#ctor(FamilyPlanning_API.Models.family_planningContext)">
+            <summary>
+            Конструктор контроллера ролей пользователей.
+            </summary>
+            <param name="context">Контекст базы данных.</param>
+        </member>
+        <member name="M:RolesController.GetAll">
+            <summary>
+            Получение всех ролей пользователей.
+            </summary>
+            <returns>Возвращает список всех ролей пользователей.</returns>
+        </member>
+        <member name="M:RolesController.GetById(System.Int32)">
+            <summary>
+            Получение роли пользователя по её идентификатору.
+            </summary>
+            <param name="id">Идентификатор роли пользователя.</param>
+            <returns>Возвращает роль пользователя с указанным идентификатором или сообщение об ошибке, если роль не найдена.</returns>
+        </member>
+        <member name="M:RolesController.Add(FamilyPlanning_API.Models.Role)">
+            <summary>
+            Добавление новой роли пользователя.
+            </summary>
+            <param name="role">Модель данных роли пользователя для добавления.</param>
+            <returns>Возвращает созданную роль пользователя и её маршрут или сообщение об ошибке при неверных входных данных.</returns>
+        </member>
+        <member name="M:RolesController.Update(System.Int32,FamilyPlanning_API.Models.Role)">
+            <summary>
+            Обновление роли пользователя по её идентификатору.
+            </summary>
+            <param name="id">Идентификатор роли пользователя для обновления.</param>
+            <param name="role">Модель данных для обновления роли пользователя.</param>
+            <returns>Возвращает успешное сообщение о выполнении обновления или сообщение об ошибке при неверных входных данных или отсутствии роли.</returns>
+        </member>
+        <member name="M:RolesController.Delete(System.Int32)">
+            <summary>
+            Удаление роли пользователя по её идентификатору.
+            </summary>
+            <param name="id">Идентификатор роли пользователя для удаления.</param>
+            <returns>Возвращает успешное сообщение о выполнении удаления или сообщение об ошибке при отсутствии роли с указанным идентификатором.</returns>
+        </member>
+        <member name="T:TableListController">
+            <summary>
+            Контроллер для работы с таблицами списков.
+            </summary>
+        </member>
+        <member name="M:TableListController.#ctor(FamilyPlanning_API.Models.family_planningContext)">
+            <summary>
+            Конструктор контроллера таблиц списков.
+            </summary>
+            <param name="context">Контекст базы данных.</param>
+        </member>
+        <member name="M:TableListController.GetAll">
+            <summary>
+            Получение всех таблиц списков.
+            </summary>
+            <returns>Возвращает список всех таблиц списков.</returns>
+        </member>
+        <member name="M:TableListController.GetById(System.Int32)">
+            <summary>
+            Получение таблицы списка по её идентификатору.
+            </summary>
+            <param name="id">Идентификатор таблицы списка.</param>
+            <returns>Возвращает таблицу списка с указанным идентификатором или сообщение об ошибке, если таблица не найдена.</returns>
+        </member>
+        <member name="M:TableListController.Add(FamilyPlanning_API.Models.TableList)">
+            <summary>
+            Добавление новой таблицы списка.
+            </summary>
+            <param name="tableList">Модель данных таблицы списка для добавления.</param>
+            <returns>Возвращает созданную таблицу списка и её маршрут или сообщение об ошибке при неверных входных данных.</returns>
+        </member>
+        <member name="M:TableListController.Update(System.Int32,FamilyPlanning_API.Models.TableList)">
+            <summary>
+            Обновление таблицы списка по её идентификатору.
+            </summary>
+            <param name="id">Идентификатор таблицы списка для обновления.</param>
+            <param name="tableList">Модель данных для обновления таблицы списка.</param>
+            <returns>Возвращает успешное сообщение о выполнении обновления или сообщение об ошибке при неверных входных данных или отсутствии таблицы.</returns>
+        </member>
+        <member name="M:TableListController.Delete(System.Int32)">
+            <summary>
+            Удаление таблицы списка по её идентификатору.
+            </summary>
+            <param name="id">Идентификатор таблицы списка для удаления.</param>
+            <returns>Возвращает успешное сообщение о выполнении удаления или сообщение об ошибке при отсутствии таблицы с указанным идентификатором.</returns>
+        </member>
+        <member name="T:TaskController">
+            <summary>
+            Контроллер для работы с задачами.
+            </summary>
+        </member>
+        <member name="M:TaskController.#ctor(FamilyPlanning_API.Models.family_planningContext)">
+            <summary>
+            Конструктор контроллера задач.
+            </summary>
+            <param name="context">Контекст базы данных.</param>
+        </member>
+        <member name="M:TaskController.GetAll">
+            <summary>
+            Получение всех задач.
+            </summary>
+            <returns>Возвращает список всех задач.</returns>
+        </member>
+        <member name="M:TaskController.GetById(System.Int32)">
+            <summary>
+            Получение задачи по её идентификатору.
+            </summary>
+            <param name="id">Идентификатор задачи.</param>
+            <returns>Возвращает задачу с указанным идентификатором или сообщение об ошибке, если задача не найдена.</returns>
+        </member>
+        <member name="M:TaskController.Add(FamilyPlanning_API.Models.Task)">
+            <summary>
+            Добавление новой задачи.
+            </summary>
+            <param name="task">Модель данных задачи для добавления.</param>
+            <returns>Возвращает созданную задачу и её маршрут или сообщение об ошибке при неверных входных данных.</returns>
+        </member>
+        <member name="M:TaskController.Update(System.Int32,FamilyPlanning_API.Models.Task)">
+            <summary>
+            Обновление задачи по её идентификатору.
+            </summary>
+            <param name="id">Идентификатор задачи для обновления.</param>
+            <param name="task">Модель данных для обновления задачи.</param>
+            <returns>Возвращает успешное сообщение о выполнении обновления или сообщение об ошибке при неверных входных данных или отсутствии задачи.</returns>
+        </member>
+        <member name="M:TaskController.Delete(System.Int32)">
+            <summary>
+            Удаление задачи по её идентификатору.
+            </summary>
+            <param name="id">Идентификатор задачи для удаления.</param>
+            <returns>Возвращает успешное сообщение о выполнении удаления или сообщение об ошибке при отсутствии задачи с указанным идентификатором.</returns>
+        </member>
+        <member name="T:WebUserController">
+            <summary>
+            Контроллер для работы с пользователями веб-приложения.
+            </summary>
+        </member>
+        <member name="M:WebUserController.#ctor(FamilyPlanning_API.Models.family_planningContext)">
+            <summary>
+            Конструктор контроллера пользователей веб-приложения.
+            </summary>
+            <param name="context">Контекст базы данных.</param>
+        </member>
+        <member name="M:WebUserController.GetAll">
+            <summary>
+            Получение всех пользователей веб-приложения.
+            </summary>
+            <returns>Возвращает список всех пользователей.</returns>
+        </member>
+        <member name="M:WebUserController.GetById(System.Int32)">
+            <summary>
+            Получение пользователя веб-приложения по его идентификатору.
+            </summary>
+            <param name="id">Идентификатор пользователя.</param>
+            <returns>Возвращает пользователя с указанным идентификатором или сообщение об ошибке, если пользователь не найден.</returns>
+        </member>
+        <member name="M:WebUserController.Add(FamilyPlanning_API.Contracts.WebUser.CreateUserRequest)">
+            <summary>
+            Добавление нового пользователя веб-приложения.
+            </summary>
+            <param name="user">Модель данных пользователя для добавления.</param>
+            <returns>Возвращает созданного пользователя и его маршрут или сообщение об ошибке при неверных входных данных.</returns>
+        </member>
+        <member name="M:WebUserController.Update(System.Int32,FamilyPlanning_API.Models.WebUser)">
+            <summary>
+            Обновление пользователя веб-приложения по его идентификатору.
+            </summary>
+            <param name="id">Идентификатор пользователя для обновления.</param>
+            <param name="user">Модель данных для обновления пользователя.</param>
+            <returns>Возвращает успешное сообщение о выполнении обновления или сообщение об ошибке при неверных входных данных или отсутствии пользователя.</returns>
+        </member>
+        <member name="M:WebUserController.Delete(System.Int32)">
+            <summary>
+            Удаление пользователя веб-приложения по его идентификатору.
+            </summary>
+            <param name="id">Идентификатор пользователя для удаления.</param>
+            <returns>Возвращает успешное сообщение о выполнении удаления или сообщение об ошибке при отсутствии пользователя с указанным идентификатором.</returns>
+        </member>
+    </members>
+</doc>

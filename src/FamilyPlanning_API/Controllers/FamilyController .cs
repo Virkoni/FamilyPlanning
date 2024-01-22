@@ -1,21 +1,30 @@
 ﻿using FamilyPlanning_API.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
+using Microsoft.EntityFrameworkCore;
+
+/// <summary>
+/// Контроллер для работы с семьями.
+/// </summary>
 [Route("api/[controller]")]
 [ApiController]
 public class FamilyController : ControllerBase
 {
     private readonly family_planningContext _context;
 
+    /// <summary>
+    /// Конструктор контроллера семей.
+    /// </summary>
+    /// <param name="context">Контекст базы данных.</param>
     public FamilyController(family_planningContext context)
     {
         _context = context;
     }
 
+    /// <summary>
+    /// Получение всех семей.
+    /// </summary>
+    /// <returns>Возвращает список всех семей.</returns>
     [HttpGet]
     public IActionResult GetAll()
     {
@@ -23,6 +32,11 @@ public class FamilyController : ControllerBase
         return Ok(families);
     }
 
+    /// <summary>
+    /// Получение семьи по ее идентификатору.
+    /// </summary>
+    /// <param name="id">Идентификатор семьи.</param>
+    /// <returns>Возвращает семью с указанным идентификатором или сообщение об ошибке, если семья не найдена.</returns>
     [HttpGet("{id}")]
     public IActionResult GetById(int id)
     {
@@ -36,6 +50,11 @@ public class FamilyController : ControllerBase
         return Ok(family);
     }
 
+    /// <summary>
+    /// Добавление новой семьи.
+    /// </summary>
+    /// <param name="family">Модель данных семьи для добавления.</param>
+    /// <returns>Возвращает созданную семью и ее маршрут или сообщение об ошибке при неверных входных данных.</returns>
     [HttpPost]
     public IActionResult Add(Family family)
     {
@@ -44,6 +63,12 @@ public class FamilyController : ControllerBase
         return CreatedAtAction(nameof(GetById), new { id = family.Id }, family);
     }
 
+    /// <summary>
+    /// Обновление семьи по ее идентификатору.
+    /// </summary>
+    /// <param name="id">Идентификатор семьи для обновления.</param>
+    /// <param name="family">Модель данных для обновления семьи.</param>
+    /// <returns>Возвращает успешное сообщение о выполнении обновления или сообщение об ошибке при неверных входных данных или отсутствии семьи.</returns>
     [HttpPut("{id}")]
     public IActionResult Update(int id, Family family)
     {
@@ -73,6 +98,11 @@ public class FamilyController : ControllerBase
         return NoContent();
     }
 
+    /// <summary>
+    /// Удаление семьи по ее идентификатору.
+    /// </summary>
+    /// <param name="id">Идентификатор семьи для удаления.</param>
+    /// <returns>Возвращает успешное сообщение о выполнении удаления или сообщение об ошибке при отсутствии семьи с указанным идентификатором.</returns>
     [HttpDelete("{id}")]
     public IActionResult Delete(int id)
     {

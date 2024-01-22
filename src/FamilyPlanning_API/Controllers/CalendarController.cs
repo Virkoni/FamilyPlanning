@@ -1,20 +1,30 @@
 ﻿using FamilyPlanning_API.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Linq;
 
+using Microsoft.EntityFrameworkCore;
+
+/// <summary>
+/// Контроллер для работы с календарями.
+/// </summary>
 [Route("api/[controller]")]
 [ApiController]
 public class CalendarController : ControllerBase
 {
     private readonly family_planningContext _context;
 
+    /// <summary>
+    /// Конструктор контроллера календарей.
+    /// </summary>
+    /// <param name="context">Контекст базы данных.</param>
     public CalendarController(family_planningContext context)
     {
         _context = context;
     }
 
+    /// <summary>
+    /// Получение всех календарей.
+    /// </summary>
+    /// <returns>Возвращает список всех календарей.</returns>
     [HttpGet]
     public IActionResult GetAll()
     {
@@ -22,6 +32,11 @@ public class CalendarController : ControllerBase
         return Ok(calendars);
     }
 
+    /// <summary>
+    /// Получение календаря по его идентификатору.
+    /// </summary>
+    /// <param name="id">Идентификатор календаря.</param>
+    /// <returns>Возвращает календарь с указанным идентификатором или сообщение об ошибке, если календарь не найден.</returns>
     [HttpGet("{id}")]
     public IActionResult GetById(int id)
     {
@@ -35,6 +50,11 @@ public class CalendarController : ControllerBase
         return Ok(calendar);
     }
 
+    /// <summary>
+    /// Добавление нового календаря.
+    /// </summary>
+    /// <param name="calendar">Модель данных календаря для добавления.</param>
+    /// <returns>Возвращает созданный календарь и его маршрут или сообщение об ошибке при неверных входных данных.</returns>
     [HttpPost]
     public IActionResult Add(Calendar calendar)
     {
@@ -43,6 +63,12 @@ public class CalendarController : ControllerBase
         return CreatedAtAction(nameof(GetById), new { id = calendar.Id }, calendar);
     }
 
+    /// <summary>
+    /// Обновление календаря по его идентификатору.
+    /// </summary>
+    /// <param name="id">Идентификатор календаря для обновления.</param>
+    /// <param name="calendar">Модель данных для обновления календаря.</param>
+    /// <returns>Возвращает успешное сообщение о выполнении обновления или сообщение об ошибке при неверных входных данных или отсутствии календаря.</returns>
     [HttpPut("{id}")]
     public IActionResult Update(int id, Calendar calendar)
     {
@@ -72,6 +98,11 @@ public class CalendarController : ControllerBase
         return NoContent();
     }
 
+    /// <summary>
+    /// Удаление календаря по его идентификатору.
+    /// </summary>
+    /// <param name="id">Идентификатор календаря для удаления.</param>
+    /// <returns>Возвращает успешное сообщение о выполнении удаления или сообщение об ошибке при отсутствии календаря с указанным идентификатором.</returns>
     [HttpDelete("{id}")]
     public IActionResult Delete(int id)
     {

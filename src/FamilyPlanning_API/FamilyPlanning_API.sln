@@ -5,7 +5,13 @@ VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FamilyPlanning_API", "FamilyPlanning_API.csproj", "{FA436DFD-2918-4153-91BC-71C29E848C83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "data_access", "..\family_planning\data_access.csproj", "{3A5DC0BD-D2FD-4116-8504-A76489C680E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "data_access", "..\family_planning\data_access.csproj", "{3A5DC0BD-D2FD-4116-8504-A76489C680E6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{EF3E2735-724D-4384-8D23-133841D1941D}"
+	ProjectSection(SolutionItems) = preProject
+		BasicEventService.cs = BasicEventService.cs
+		UserService.cs = UserService.cs
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

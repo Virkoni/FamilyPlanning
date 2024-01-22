@@ -24,6 +24,14 @@ namespace FamilyPlanning_API.Controllers
             _context = context;
         }
 
+        /// <summary>
+        /// –егистраци€ нового пользовател€.
+        /// </summary>
+        /// <remarks>
+        /// ѕроизводит регистрацию нового пользовател€ в системе.
+        /// </remarks>
+        /// <param name="model">ћодель данных дл€ регистрации пользовател€, включа€ уникальное им€ пользовател€, пароль и дату рождени€.</param>
+        /// <returns>¬озвращает успешное сообщение о завершении регистрации или сообщение об ошибке, если указанное им€ пользовател€ уже зан€то.</returns>
         [HttpPost("register")]
         public IActionResult Register([FromBody] RegisterViewModel model)
         {
@@ -41,13 +49,21 @@ namespace FamilyPlanning_API.Controllers
                 Birthdate = model.Birthdate
             };
 
-            // Add the user to the database
+            // ƒобавление пользовател€ в базу данных
             _context.WebUsers.Add(newUser);
             _context.SaveChanges();
 
             return Ok(new { Message = "Registration successful" });
         }
 
+        /// <summary>
+        /// ¬ход пользовател€ в систему.
+        /// </summary>
+        /// <remarks>
+        /// ѕроизводит аутентификацию пользовател€ на основе предоставленных учетных данных.
+        /// </remarks>
+        /// <param name="model">ћодель данных дл€ входа пользовател€, включа€ им€ пользовател€ и пароль.</param>
+        /// <returns>¬озвращает токен JWT и идентификатор пользовател€ в случае успешной аутентификации, иначе возвращает сообщение об ошибке.</returns>
         [HttpPost("login")]
         public IActionResult Login([FromBody] LoginViewModel model)
         {
@@ -62,18 +78,26 @@ namespace FamilyPlanning_API.Controllers
             return Unauthorized("Invalid username or password");
         }
 
-        [Authorize] 
+        /// <summary>
+        /// ќбновление профил€ пользовател€.
+        /// </summary>
+        /// <remarks>
+        /// ѕроизводит обновление персональных данных пользовател€.
+        /// </remarks>
+        /// <param name="model">ћодель данных дл€ обновлени€ профил€ пользовател€, включа€ им€ и фамилию.</param>
+        /// <returns>¬озвращает успешное сообщение о завершении обновлени€ профил€ или сообщение об ошибке в случае отсутстви€ пользовател€ с указанным идентификатором.</returns>
+        [Authorize]
         [HttpPut("update-profile")]
         public IActionResult UpdateProfile([FromBody] UpdateProfileViewModel model)
         {
-            // Get the user ID from the token
+            // ѕолучение идентификатора пользовател€ из токена
             var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
             if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int userId))
             {
                 return Unauthorized("Invalid user token");
             }
 
-            // Retrieve the user from the database
+            // ѕолучение пользовател€ из базы данных
             var user = _context.WebUsers.Find(userId);
 
             if (user == null)
@@ -87,6 +111,7 @@ namespace FamilyPlanning_API.Controllers
 
             return Ok(new { Message = "Profile updated successfully" });
         }
+
 
         private WebUser AuthenticateUser(string userName, string password)
         {

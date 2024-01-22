@@ -1,5 +1,7 @@
 using FamilyPlanning_API.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
+using System.Reflection;
 
 namespace FamilyPlanning_API
 {
@@ -9,7 +11,31 @@ namespace FamilyPlanning_API
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+            builder.Services.AddSwaggerGen(options =>
+            {
+
+                options.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "Семейный планировщик API",
+                    Description = "Позволяет семьям создавать графики делегирования задач, планировать мероприятия, и совместно использовать календари и списки",
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Пример контакта",
+                        Url = new Uri("https://example.com/contact")
+                    },
+                    License = new OpenApiLicense
+                    {
+                        Name = "Пример лицензии",
+                        Url = new Uri("https://example.com/license")
+                    }
+
+                });
+                var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
+            });
+
+
             builder.Services.AddDbContext <family_planningContext> (
                 options => options.UseSqlServer(builder.Configuration["ConnectionString"]));
 

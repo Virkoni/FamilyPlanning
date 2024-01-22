@@ -69,3 +69,6 @@ E:\crapik\sharag2\БД\Создание API, знакомство с ASP.NET Cor
 E:\crapik\sharag2\БД\Создание API, знакомство с ASP.NET Core. Создание Базы Данных для веб-приложения\FamilyPlanning_API\bin\Debug\net6.0\data_access.pdb
 E:\crapik\sharag2\БД\Создание API, знакомство с ASP.NET Core. Создание Базы Данных для веб-приложения\FamilyPlanning_API\bin\Debug\net6.0\Humanizer.dll
 E:\crapik\sharag2\БД\Создание API, знакомство с ASP.NET Core. Создание Базы Данных для веб-приложения\FamilyPlanning_API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+E:\crapik\sharag2\БД\Создание API, знакомство с ASP.NET Core. Создание Базы Данных для веб-приложения\FamilyPlanning_API\bin\Debug\net6.0\FamilyPlanning_API.xml
+E:\crapik\sharag2\БД\Создание API, знакомство с ASP.NET Core. Создание Базы Данных для веб-приложения\FamilyPlanning_API\obj\Debug\net6.0\FamilyPlanning_API.xml
+E:\crapik\sharag2\БД\Создание API, знакомство с ASP.NET Core. Создание Базы Данных для веб-приложения\FamilyPlanning_API\bin\Debug\net6.0\Mapster.dll
