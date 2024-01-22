@@ -1,0 +1,14 @@
+E:\crapik\sharag2\БД\Создание API, знакомство с ASP.NET Core. Создание Базы Данных для веб-приложения\family_planning\bin\Debug\net6.0\data_access.deps.json
+E:\crapik\sharag2\БД\Создание API, знакомство с ASP.NET Core. Создание Базы Данных для веб-приложения\family_planning\bin\Debug\net6.0\data_access.runtimeconfig.json
+E:\crapik\sharag2\БД\Создание API, знакомство с ASP.NET Core. Создание Базы Данных для веб-приложения\family_planning\bin\Debug\net6.0\data_access.dll
+E:\crapik\sharag2\БД\Создание API, знакомство с ASP.NET Core. Создание Базы Данных для веб-приложения\family_planning\bin\Debug\net6.0\data_access.pdb
+E:\crapik\sharag2\БД\Создание API, знакомство с ASP.NET Core. Создание Базы Данных для веб-приложения\family_planning\obj\Debug\net6.0\data_access.csproj.AssemblyReference.cache
+E:\crapik\sharag2\БД\Создание API, знакомство с ASP.NET Core. Создание Базы Данных для веб-приложения\family_planning\obj\Debug\net6.0\data_access.GeneratedMSBuildEditorConfig.editorconfig
+E:\crapik\sharag2\БД\Создание API, знакомство с ASP.NET Core. Создание Базы Данных для веб-приложения\family_planning\obj\Debug\net6.0\data_access.AssemblyInfoInputs.cache
+E:\crapik\sharag2\БД\Создание API, знакомство с ASP.NET Core. Создание Базы Данных для веб-приложения\family_planning\obj\Debug\net6.0\data_access.AssemblyInfo.cs
+E:\crapik\sharag2\БД\Создание API, знакомство с ASP.NET Core. Создание Базы Данных для веб-приложения\family_planning\obj\Debug\net6.0\data_access.csproj.CoreCompileInputs.cache
+E:\crapik\sharag2\БД\Создание API, знакомство с ASP.NET Core. Создание Базы Данных для веб-приложения\family_planning\obj\Debug\net6.0\data_access.dll
+E:\crapik\sharag2\БД\Создание API, знакомство с ASP.NET Core. Создание Базы Данных для веб-приложения\family_planning\obj\Debug\net6.0\refint\data_access.dll
+E:\crapik\sharag2\БД\Создание API, знакомство с ASP.NET Core. Создание Базы Данных для веб-приложения\family_planning\obj\Debug\net6.0\data_access.pdb
+E:\crapik\sharag2\БД\Создание API, знакомство с ASP.NET Core. Создание Базы Данных для веб-приложения\family_planning\obj\Debug\net6.0\data_access.genruntimeconfig.cache
+E:\crapik\sharag2\БД\Создание API, знакомство с ASP.NET Core. Создание Базы Данных для веб-приложения\family_planning\obj\Debug\net6.0\ref\data_access.dll
