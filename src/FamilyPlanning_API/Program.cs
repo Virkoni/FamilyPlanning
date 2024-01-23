@@ -13,9 +13,9 @@ namespace FamilyPlanning_API
 
             builder.Services.AddSwaggerGen(options =>
             {
-
                 options.SwaggerDoc("v1", new OpenApiInfo
                 {
+
                     Version = "v1",
                     Title = "Семейный планировщик API",
                     Description = "Позволяет семьям создавать графики делегирования задач, планировать мероприятия, и совместно использовать календари и списки",
@@ -35,9 +35,8 @@ namespace FamilyPlanning_API
                 options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
             });
 
-
-            builder.Services.AddDbContext <family_planningContext> (
-                options => options.UseSqlServer(builder.Configuration["ConnectionString"]));
+            builder.Services.AddDbContext<family_planningContext>(options =>
+                options.UseSqlServer(builder.Configuration["ConnectionString"]));
 
             builder.Services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
             {
@@ -45,6 +44,8 @@ namespace FamilyPlanning_API
                        .AllowAnyMethod()
                        .AllowAnyHeader();
             }));
+
+            builder.Services.AddScoped<IBasicEventService, BasicEventService>(); 
 
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
@@ -61,6 +62,7 @@ namespace FamilyPlanning_API
             app.UseHttpsRedirection();
             app.UseAuthorization();
             app.UseCors("MyPolicy");
+
             app.MapControllers();
 
             app.Run();

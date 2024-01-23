@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FamilyPlanning_API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+55c04de53db9065dcf176ef9eed22910dbff9c10")]
 [assembly: System.Reflection.AssemblyProductAttribute("FamilyPlanning_API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FamilyPlanning_API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

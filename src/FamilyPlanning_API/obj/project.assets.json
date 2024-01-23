@@ -4361,11 +4361,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\crapik\\sharag2\\БД\\Создание API, знакомство с ASP.NET Core. Создание Базы Данных для веб-приложения\\FamilyPlanning_API\\FamilyPlanning_API.csproj",
+      "projectUniqueName": "E:\\crapik\\sharag2\\github\\FamilyPlanning\\src\\FamilyPlanning_API\\FamilyPlanning_API.csproj",
       "projectName": "FamilyPlanning_API",
-      "projectPath": "E:\\crapik\\sharag2\\БД\\Создание API, знакомство с ASP.NET Core. Создание Базы Данных для веб-приложения\\FamilyPlanning_API\\FamilyPlanning_API.csproj",
+      "projectPath": "E:\\crapik\\sharag2\\github\\FamilyPlanning\\src\\FamilyPlanning_API\\FamilyPlanning_API.csproj",
       "packagesPath": "C:\\Users\\gnid\\.nuget\\packages\\",
-      "outputPath": "E:\\crapik\\sharag2\\БД\\Создание API, знакомство с ASP.NET Core. Создание Базы Данных для веб-приложения\\FamilyPlanning_API\\obj\\",
+      "outputPath": "E:\\crapik\\sharag2\\github\\FamilyPlanning\\src\\FamilyPlanning_API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\gnid\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4382,8 +4382,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "E:\\crapik\\sharag2\\БД\\Создание API, знакомство с ASP.NET Core. Создание Базы Данных для веб-приложения\\family_planning\\data_access.csproj": {
-              "projectPath": "E:\\crapik\\sharag2\\БД\\Создание API, знакомство с ASP.NET Core. Создание Базы Данных для веб-приложения\\family_planning\\data_access.csproj"
+            "E:\\crapik\\sharag2\\github\\FamilyPlanning\\src\\family_planning\\data_access.csproj": {
+              "projectPath": "E:\\crapik\\sharag2\\github\\FamilyPlanning\\src\\family_planning\\data_access.csproj"
             }
           }
         }

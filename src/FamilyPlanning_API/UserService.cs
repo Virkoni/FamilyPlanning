@@ -15,7 +15,7 @@ public class UserService : IUserService
 
     public UserService(family_planningContext context)
     {
-        _context = context;
+        _context = context ?? throw new ArgumentNullException(nameof(context));
     }
 
     public async Task<CustomTask> CreateAsync(CreateUserRequest request)

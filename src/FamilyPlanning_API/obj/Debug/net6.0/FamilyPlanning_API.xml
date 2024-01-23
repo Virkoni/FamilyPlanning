@@ -39,7 +39,7 @@
             Контроллер для работы с базовыми событиями.
             </summary>
         </member>
-        <member name="M:BasicEventController.#ctor(FamilyPlanning_API.Models.family_planningContext)">
+        <member name="M:BasicEventController.#ctor(FamilyPlanning_API.Models.family_planningContext,BasicEventService)">
             <summary>
             Конструктор контроллера базовых событий.
             </summary>

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WFzsq6uZsFm50VHrdj7LZQcsn5jA7DJ8m7TU8qi8UHyVFj+MtqhHp12KozGQj1qA9F4X+VbWT9200B3zklfaVQ==",
+  "dgSpecHash": "QsDgMo2lpfdTejIOGfIiOGgSHpZJqKcBb6sYzT2EhPnvzYCRSKUufd0cVnzIo+9G4NDWB7IRXyuzzFeZGV8abg==",
   "success": true,
-  "projectFilePath": "E:\\crapik\\sharag2\\БД\\Создание API, знакомство с ASP.NET Core. Создание Базы Данных для веб-приложения\\FamilyPlanning_API\\FamilyPlanning_API.csproj",
+  "projectFilePath": "E:\\crapik\\sharag2\\github\\FamilyPlanning\\src\\FamilyPlanning_API\\FamilyPlanning_API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gnid\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\gnid\\.nuget\\packages\\mapster\\6.5.1\\mapster.6.5.1.nupkg.sha512",

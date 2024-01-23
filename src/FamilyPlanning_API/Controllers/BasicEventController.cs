@@ -19,10 +19,12 @@ public class BasicEventController : ControllerBase
     /// Конструктор контроллера базовых событий.
     /// </summary>
     /// <param name="context">Контекст базы данных.</param>
-    public BasicEventController(family_planningContext context)
+    public BasicEventController(family_planningContext context, BasicEventService eventService)
     {
         _context = context;
+        _eventService = eventService ?? throw new ArgumentNullException(nameof(eventService));
     }
+
 
     /// <summary>
     /// Получение всех базовых событий.
